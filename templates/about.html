@@ -4,72 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About System</title>
+    <title>About | Lakshya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-50">
+<body class="bg-slate-50 min-h-screen text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-700">PlacementAI</h1>
-
-            <div class="space-x-6">
-                <a href="{{ url_for('index') }}">Home</a>
-                <a href="{{ url_for('dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('analytics') }}">Analytics</a>
-                <a href="{{ url_for('about') }}" class="text-blue-600 font-semibold">About</a>
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        L</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Lakshya</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="{{ url_for('index') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="{{ url_for('dashboard') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">Engine</a>
+                    <a href="{{ url_for('analytics') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">Analytics</a>
+                    <a href="{{ url_for('about') }}" class="text-blue-600 font-semibold transition-colors">About</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto py-16 px-6">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">System Architecture</h2>
 
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-10">
-
-            <h1 class="text-4xl font-bold text-slate-900">
-                About the Placement Prediction System
-            </h1>
-
-            <p class="mt-6 text-slate-600 leading-relaxed">
-                The Placement Prediction System is an AI-powered analytics
-                platform developed to estimate the likelihood of student
-                placement based on academic performance, aptitude metrics,
-                and other relevant factors.
-            </p>
-
-            <p class="mt-4 text-slate-600 leading-relaxed">
-                The machine learning model used in this application is a
-                Random Forest Classifier trained on engineering student
-                datasets. Random Forest is an ensemble learning technique
-                that combines multiple decision trees to improve predictive
-                accuracy and reduce overfitting.
-            </p>
-
-            <p class="mt-4 text-slate-600 leading-relaxed">
-                By analyzing student-related features, the system provides
-                data-driven predictions that can assist institutions,
-                placement cells, and students in understanding career
-                readiness and placement potential.
-            </p>
-
-            <div class="mt-8 bg-blue-50 border border-blue-100 rounded-2xl p-6">
-                <h3 class="font-semibold text-blue-700">
-                    Model Information
-                </h3>
-
-                <ul class="mt-4 space-y-2 text-slate-700">
-                    <li>• Algorithm: Random Forest Classifier</li>
-                    <li>• Category: Supervised Machine Learning</li>
-                    <li>• Task: Binary Classification</li>
-                    <li>• Domain: Student Placement Prediction</li>
-                </ul>
+            <div class="space-y-6 text-slate-600 leading-relaxed">
+                <p>
+                    The <strong>Lakshya Placement Prediction System</strong> is an end-to-end machine learning
+                    application designed to forecast the likelihood of university students securing campus placements.
+                </p>
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">The Machine Learning Model</h3>
+                    <p>
+                        At the core of this system is a <strong>Random Forest Classifier</strong>, an ensemble learning
+                        method constructed via Scikit-Learn. The model evaluates over 20 distinct student
+                        metrics—ranging from CGPA and coding scores to hackathon participation and mock interview
+                        performance.
+                    </p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">The Tech Stack</h3>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>Backend API:</strong> Python 3, Flask</li>
+                        <li><strong>Data Science:</strong> Pandas, NumPy, Scikit-Learn</li>
+                        <li><strong>Frontend UI:</strong> HTML5, Tailwind CSS, Jinja Templating</li>
+                        <li><strong>Deployment:</strong> Gunicorn, Hosted on Railway Cloud</li>
+                    </ul>
+                </div>
             </div>
-
         </div>
-
-    </div>
+    </main>
 
 </body>
 

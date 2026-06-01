@@ -4,65 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics</title>
+    <title>Analytics | Lakshya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-50">
+<body class="bg-slate-50 min-h-screen text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-700">PlacementAI</h1>
-
-            <div class="space-x-6">
-                <a href="{{ url_for('index') }}">Home</a>
-                <a href="{{ url_for('dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('analytics') }}" class="text-blue-600 font-semibold">Analytics</a>
-                <a href="{{ url_for('about') }}">About</a>
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        L</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Lakshya</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="{{ url_for('index') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="{{ url_for('dashboard') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">Engine</a>
+                    <a href="{{ url_for('analytics') }}"
+                        class="text-blue-600 font-semibold transition-colors">Analytics</a>
+                    <a href="{{ url_for('about') }}"
+                        class="text-slate-500 hover:text-blue-600 font-medium transition-colors">About</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto py-12 px-6">
-
-        <h1 class="text-4xl font-bold text-slate-900">
-            Data Analytics Dashboard
-        </h1>
-
-        <p class="text-slate-600 mt-3">
-            Future visualizations and statistical insights will appear here.
-        </p>
-
-        <div class="grid lg:grid-cols-2 gap-8 mt-10">
-
-            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
-                <p class="text-slate-400 text-lg">
-                    Chart Placeholder 1
-                </p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-8 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900">Data Analytics</h2>
+                <p class="text-slate-500 mt-2">Historical trends and dataset distribution.</p>
             </div>
-
-            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
-                <p class="text-slate-400 text-lg">
-                    Chart Placeholder 2
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
-                <p class="text-slate-400 text-lg">
-                    Chart Placeholder 3
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
-                <p class="text-slate-400 text-lg">
-                    Chart Placeholder 4
-                </p>
-            </div>
-
         </div>
 
-    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-80 flex items-center justify-center flex-col text-slate-400">
+                <svg class="w-12 h-12 mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                    </path>
+                </svg>
+                <span class="font-medium">[ Chart 1: Feature Importance ]</span>
+            </div>
+            <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-80 flex items-center justify-center flex-col text-slate-400">
+                <svg class="w-12 h-12 mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+                <span class="font-medium">[ Chart 2: Placement Distribution ]</span>
+            </div>
+            <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-80 md:col-span-2 flex items-center justify-center flex-col text-slate-400">
+                <span class="font-medium">[ Chart 3: Correlation Matrix ]</span>
+            </div>
+        </div>
+    </main>
 
 </body>
 
