@@ -23,25 +23,40 @@ def home():
     # Pass the features list to our HTML so it can build the form automatically
     return render_template('index.html', features=FEATURES)
 
+# The Landing Page
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# The Prediction Engine Page
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html', features=FEATURES)
+
+# The Analytics Page
+@app.route('/analytics')
+def analytics():
+    return render_template('analytics.html')
+
+# The About Page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+# The Prediction Logic (Triggered by the form on dashboard.html)
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # 1. Grab all the input values from the HTML form
         input_data = [float(request.form.get(feature, 0)) for feature in FEATURES]
-        
-        # 2. Convert to a numpy array and reshape it for the model
         input_array = np.array(input_data).reshape(1, -1)
-        
-        # 3. Make the prediction!
         prediction = model.predict(input_array)[0]
-        
-        # 4. Interpret the result (Assuming 1 = Placed, 0 = Not Placed)
         result = "Placed" if prediction == 1 else "Not Placed"
         
-        return render_template('index.html', features=FEATURES, prediction_text=f'AI Prediction: Student will be {result}')
+        # Notice we render dashboard.html here, not index.html!
+        return render_template('dashboard.html', features=FEATURES, prediction_text=f'AI Prediction: Student will be {result}')
     
     except Exception as e:
-        return render_template('index.html', features=FEATURES, prediction_text=f'Error: {str(e)}')
+        return render_template('dashboard.html', features=FEATURES, prediction_text=f'Error: {str(e)}')
 
 if __name__ == "__main__":
     # Run the app locally for testing
