@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-700">PlacementAI</h1>
+
+            <div class="space-x-6">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('analytics') }}">Analytics</a>
+                <a href="{{ url_for('about') }}" class="text-blue-600 font-semibold">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto py-16 px-6">
+
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-10">
+
+            <h1 class="text-4xl font-bold text-slate-900">
+                About the Placement Prediction System
+            </h1>
+
+            <p class="mt-6 text-slate-600 leading-relaxed">
+                The Placement Prediction System is an AI-powered analytics
+                platform developed to estimate the likelihood of student
+                placement based on academic performance, aptitude metrics,
+                and other relevant factors.
+            </p>
+
+            <p class="mt-4 text-slate-600 leading-relaxed">
+                The machine learning model used in this application is a
+                Random Forest Classifier trained on engineering student
+                datasets. Random Forest is an ensemble learning technique
+                that combines multiple decision trees to improve predictive
+                accuracy and reduce overfitting.
+            </p>
+
+            <p class="mt-4 text-slate-600 leading-relaxed">
+                By analyzing student-related features, the system provides
+                data-driven predictions that can assist institutions,
+                placement cells, and students in understanding career
+                readiness and placement potential.
+            </p>
+
+            <div class="mt-8 bg-blue-50 border border-blue-100 rounded-2xl p-6">
+                <h3 class="font-semibold text-blue-700">
+                    Model Information
+                </h3>
+
+                <ul class="mt-4 space-y-2 text-slate-700">
+                    <li>• Algorithm: Random Forest Classifier</li>
+                    <li>• Category: Supervised Machine Learning</li>
+                    <li>• Task: Binary Classification</li>
+                    <li>• Domain: Student Placement Prediction</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-700">PlacementAI</h1>
+
+            <div class="space-x-6">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('analytics') }}" class="text-blue-600 font-semibold">Analytics</a>
+                <a href="{{ url_for('about') }}">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto py-12 px-6">
+
+        <h1 class="text-4xl font-bold text-slate-900">
+            Data Analytics Dashboard
+        </h1>
+
+        <p class="text-slate-600 mt-3">
+            Future visualizations and statistical insights will appear here.
+        </p>
+
+        <div class="grid lg:grid-cols-2 gap-8 mt-10">
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
+                <p class="text-slate-400 text-lg">
+                    Chart Placeholder 1
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
+                <p class="text-slate-400 text-lg">
+                    Chart Placeholder 2
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
+                <p class="text-slate-400 text-lg">
+                    Chart Placeholder 3
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-100 h-80 flex items-center justify-center">
+                <p class="text-slate-400 text-lg">
+                    Chart Placeholder 4
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
